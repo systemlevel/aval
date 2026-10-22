@@ -130,7 +130,7 @@ for (const [name, version] of Object.entries({
   "@types/react": "19.2.17",
   "@types/react-dom": "19.2.3",
   typescript: "7.0.2",
-  vite: "8.1.4"
+  vite: "8.3.5"
 })) {
   if (reactPackage.devDependencies?.[name] !== version) failures.push(`${reactDirectory}: ${name} must be exactly ${version}`);
 }
@@ -153,7 +153,7 @@ const plainHtml = await readFile(join(plainDirectory, "index.html"), "utf8");
 const plainSource = await readFile(join(plainDirectory, "main.js"), "utf8");
 const plainReadme = await readFile(join(plainDirectory, "README.md"), "utf8");
 if (plainPackage.dependencies?.["@pixel-point/aval-element"] !== "1.0.0") failures.push(`${plainDirectory}: example must use exact element 1.0.0`);
-if (plainPackage.devDependencies?.vite !== "8.1.4") failures.push(`${plainDirectory}: example must pin the package-aware web tool`);
+if (plainPackage.devDependencies?.vite !== "8.3.5") failures.push(`${plainDirectory}: example must pin the package-aware web tool`);
 if (!plainSource.includes('from "@pixel-point/aval-element"')) failures.push(`${plainDirectory}: example must use the public package root`);
 if (/<(?:script|style)[^>]*>[^<]/u.test(plainHtml)) failures.push(`${plainDirectory}: example must not require inline script or style authority`);
 if (!plainReadme.includes("illustrative") || !plainReadme.includes("placeholders")) failures.push(`${plainDirectory}: absent assets must be labeled illustrative placeholders`);

@@ -16,7 +16,7 @@ try {
     await cp(resolve("examples", name), target, { recursive: true });
     const manifestPath = join(target, "package.json");
     const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
-    if (manifest.devDependencies?.vite !== "8.1.4") {
+    if (manifest.devDependencies?.vite !== "8.3.5") {
       throw new Error(`${name} does not pin the reviewed Vite toolchain`);
     }
     delete manifest.devDependencies;

@@ -11,6 +11,6 @@
     "@pixel-point/aval-element": "1.0.0"
   },
   "devDependencies": {
-    "vite": "8.1.4"
+    "vite": "8.3.5"
   }
 }
